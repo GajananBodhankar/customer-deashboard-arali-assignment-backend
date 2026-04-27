@@ -21,7 +21,7 @@ route.post("/register", async (req, res) => {
     const user = await saveUser(req, res, session);
     const savedCustomer = await saveCustomer(req, user, session);
 
-    await session.commitTransaction(); // ✅ IMPORTANT
+    await session.commitTransaction(); 
     session.endSession();
 
     return res.status(201).json({
